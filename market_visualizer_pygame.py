@@ -213,8 +213,20 @@ def main():
                       help='Window height')
     args = parser.parse_args()
     
-    # Read data from stdin (one value per line)
-    data = [float(line.strip()) for line in sys.stdin]
+    # Read and process data from stdin
+    data = []
+    for line in sys.stdin:
+        line = line.strip()
+        if line and not line.startswith('"'):  # Skip empty lines and lines with just quotes
+            try:
+                value = float(line)
+                data.append(value)
+            except ValueError:
+                continue  # Skip lines that can't be converted to float
+    
+    if not data:
+        print("Error: No valid data points found in input.")
+        sys.exit(1)
     
     visualizer = MarketVisualizer(data, args.width, args.height, args.tick_interval)
     visualizer.run()
