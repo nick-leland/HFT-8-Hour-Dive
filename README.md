@@ -12,3 +12,34 @@ Points for growth:
 - Price Movement Patterns could be different: No matter what, we are directly losing a point of capture within our system.  Some very minor things won't be picked up on.  
 - Latency Simulation: Potentially add artificial delays into the system to account for latency, maybe predictions could decay based on required latency to improve overall timeline.
 
+## Data Collection
+We collect data by running the following command:
+
+```
+python data_collection.py
+```
+
+You will then need to give which stock symbols you would like to collect by giving the symbols in the following format:
+
+```
+SYMBOL1, SYMBOL2, SYMBOL3, ..., SYMBOLN
+```
+
+## Visualization
+You can also visualize with the following command:
+```
+python plot_series.py your_data.csv
+```
+Where `your_data.csv` is a file that you collected through the Data Collection function. 
+
+## Gamification
+
+To run the gamification of the files, run the following command:
+
+```
+python market_visualizer_pygame.py < data/TSLA.csv
+```
+
+This is a simplified PyGame file that runs a simulation of the scraped data. 
+
+

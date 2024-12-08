@@ -14,7 +14,7 @@ def plot_series(series, title=None):
     plt.grid(True)
     plt.show()
 
-def adjust_price_series(df, jump_threshold=10, price_column='Typical Price'):
+def adjust_price_series(df, jump_threshold=5, price_column='Typical Price'):
     previous = None
     adjustment = 0
     adjusted_ts = []
@@ -35,15 +35,6 @@ def adjust_price_series(df, jump_threshold=10, price_column='Typical Price'):
     return adjusted_ts
 
 def adjusted_portion(input_df, stock_name, plot=False, adjusted_price=True):
-    """
-    Process stock data from either CSV or yfinance and calculate typical price
-    
-    Parameters:
-    input_df: DataFrame with OHLC data
-    stock_name: String identifier for the stock
-    plot: Boolean to control plotting
-    adjusted_price: Boolean to control price adjustment
-    """
     # Create a copy to avoid modifying original data
     input = input_df.copy()
     
