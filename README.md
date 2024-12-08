@@ -45,3 +45,4 @@ This is a simplified PyGame file that runs a simulation of the scraped data.
 
 # Continuation
 Impliment this [Autoregressive Integrated Moving Average](https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average)
+Long Short-Term Memory Machine Learning
